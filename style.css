@@ -1,0 +1,328 @@
+/* Base styles for all screen sizes */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* App title styling - centered with background */
+.app {
+    display: block;
+    text-align: center;
+    color: #050608;
+    background-color: #dbdcef;
+    
+    margin: 0px;
+    /* Slightly larger for readability */
+     font-size: 24px;
+    padding: 10px;
+    height: auto;
+    min-height: 40px;
+}
+
+/* Icon styling - centered with background */
+#ic {
+    font-size: 50px;
+    color: #1cc61f;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: skyblue;
+}
+
+/* Input wrapper for positioning the geotag button inside the input */
+.input-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 50px auto 20px auto;
+}
+
+/* Geotag button positioned inside the input field */
+#geotag {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: aqua;
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#geotag:hover {
+    background-color: #7fffd4;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#geotag i {
+    font-size: 16px;
+    color: #000000;
+}
+
+
+/* Main container - takes full viewport height and centers content */
+.inputdiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(72, 145, 204, 0.672);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to width */
+}
+
+/* Weather box - the main card containing input and results */
+/* Using max-width instead of fixed width for responsiveness */
+.box {
+    background-color: aqua;
+    border-radius: 20px;
+    border: #050608 1px solid;
+    box-shadow: #3d3d3f 5px 5px 0px 0px;
+    text-align: center;
+    padding: 30px;
+    width: 90%;
+    /* Takes 90% of container width */
+    max-width: 450px;
+    /* But never exceeds 450px */
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to width */
+    position: relative;
+}
+
+/* Input field styling */
+#cityInput {
+    width: 100%;
+    /* Takes full width of parent */
+    max-width: 300px;
+    /* But never exceeds 300px */
+    height: 30px;
+    color: rgb(18, 25, 25);
+    border-radius: 100px;
+    border: none;
+    padding: 8px 40px 8px 15px;
+    /* Right padding added to accommodate geotag button */
+    display: block;
+    margin: 0 auto 20px auto;
+    /* Centered with auto margins */
+    box-sizing: border-box;
+    cursor: pointer;
+    /* Ensures padding doesn't add to width */
+}
+
+/* Input focus state */
+#cityInput:focus {
+    outline: none;
+    border: 2px solid #367eb5;
+    box-shadow: #367eb5 2px 4px 5px 4px;
+}
+
+/* Search button styling - made larger and better sized */
+#btn {
+    width: 120px;
+    /* Increased from 50px for better touch targets */
+    height: 40px;
+    /* Increased from 30px */
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: rgb(49, 121, 149);
+    color: black;
+    font-size: 14px;
+    /* Increased from 10px for readability */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Smooth transition for hover */
+}
+
+#btn:hover {
+    background-color: rgb(69, 141, 169);
+    /* Slightly lighter on hover */
+}
+
+/* Weather details display area */
+/* Using max-width instead of fixed width for responsiveness */
+#Details {
+    width: 100%;
+    /* Takes full width of parent */
+    max-width: 300px;
+    /* But never exceeds 300px */
+    color: rgb(18, 25, 25);
+    border-radius: 10px;
+    border: none;
+    box-shadow: #367eb5 2px 4px 5px 4px;
+    background-color: azure;
+    padding: 15px;
+    font-size: 14px;
+    /* Increased from 10px for readability */
+    display: block;
+    margin: 20px auto;
+    /* Centered with auto margins */
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to width */
+}
+
+/* Make h4 tags inside Details more readable */
+#Details h4 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* Media query for tablets and smaller screens (max-width: 700px) */
+@media screen and (max-width: 700px) {
+    .app {
+        font-size: 24px;
+        /*Slightly larger for readability*/
+        padding: 10px;
+        height: auto;
+        min-height: 40px;
+
+    }
+
+    #ic {
+        padding: 10px;
+        font-size: 40px;
+    }
+
+    .inputdiv {
+        padding: 15px;
+    }
+
+    .box {
+        width: 95%;
+        /* Takes 95% of container width on tablets */
+        /* max-width: none; Removes max-width restriction */
+        padding: 20px;
+    }
+
+    #cityInput {
+        max-width: 250px;
+        /* Slightly smaller on tablets */
+    }
+
+    #Details {
+        max-width: 250px;
+    }
+}
+
+/* Media query for mobile phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .app {
+        font-size: 20px;
+    }
+
+    #ic {
+        font-size: 35px;
+        padding: 8px;
+    }
+
+    .box {
+        width: 100%;
+        /* Full width on mobile */
+
+        border-radius: 10px;
+        /* Smaller border radius */
+        padding: 15px;
+        box-shadow: none;
+        /* Remove shadow on small screens */
+    }
+
+    #cityInput {
+        width: 100%;
+        /* Full width */
+        max-width: none;
+        height: 40px;
+        /* Taller for touch input */
+        margin-top: 30px;
+        font-size: 16px;
+        /* Larger text for mobile */
+    }
+
+    #btn {
+        width: 100%;
+        /* Full width button on mobile */
+        max-width: 200px;
+        height: 45px;
+        /* Taller for touch input */
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    #Details {
+        width: 100%;
+        max-width: none;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #Details h4 {
+        font-size: 14px;
+        margin: 6px 0;
+    }
+}
+
+/* Media query for very small phones (max-width: 320px) */
+@media screen and (max-width: 320px) {
+    .app {
+        font-size: 18px;
+    }
+
+    #ic {
+        font-size: 30px;
+    }
+
+    .box {
+
+        padding: 10px;
+    }
+
+    #cityInput {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    #btn {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #Details h4 {
+        font-size: 12px;
+    }
+}
+/* Weather result and loading/error states */
+#Details h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+#Details p {
+    margin: 8px 0;
+}
+
+#Details .condition {
+    text-transform: capitalize;
+    color: #315f75;
+}
+
+#Details.error {
+    background-color: #fff0eb;
+}
+
+#btn:disabled,
+#geotag:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
